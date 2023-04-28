@@ -27,6 +27,7 @@ export default function Home() {
         </div>
         <div className={style.questionBoard}>
             <ReactMarkdown children={markdown}></ReactMarkdown>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae explicabo recusandae provident soluta culpa impedit quaerat ea aspernatur, nihil, quis similique? Quam repudiandae ad nihil dignissimos quia veniam, rem iusto! Maiores optio dolores dicta aliquid reiciendis iure repellat fuga ipsam quos dignissimos vitae odio provident aliquam ab consequuntur, voluptates inventore?
         </div>
 
       </main>

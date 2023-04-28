@@ -23,12 +23,3 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,pre {
   vertical-align: baseline;
   scroll-behavior: smooth
 }
-=======
-body{
-    margin: 0;
-    padding: 0;
-}
-html::-webkit-scrollbar{
-    display: none;
-}
->>>>>>> origin/main

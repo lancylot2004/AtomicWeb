@@ -8,9 +8,9 @@ export default function Sidebar() {
   const handleButtonClick = (type: number, title: string) => {
     // Type: 0 --> Subsection, 1 --> Link
     if (type == 0) {
-
+      // Do something when a subsection is clicked
     } else if (type == 1) {
-
+      // Do something when a link is clicked
     }
   };
 
@@ -23,13 +23,29 @@ export default function Sidebar() {
             <div className={styles.sectionHeader}>{section.title}</div>
             <div className={styles.buttonSection}>
               {section.children.map((child, buttonIndex) => (
-                <button
-                  key={buttonIndex}
-                  className={styles.sectionButton}
-                  onClick={() => handleButtonClick(0, child.title)}
-                >
-                  {child.title}
-                </button>
+                <div key={buttonIndex}>
+                  <button
+                    className={`${styles.sectionButton} ${
+                      activeSection === buttonIndex && styles.activeButton
+                    }`}
+                    onClick={() => handleButtonClick(0, child.title)}
+                  >
+                    {child.title}
+                  </button>
+                  {activeSection === buttonIndex && (
+                    <div className={styles.subButtons}>
+                      {child.children.map((subsection, subIndex) => (
+                        <button
+                          key={subIndex}
+                          className={styles.subButton}
+                          onClick={() => handleButtonClick(1, subsection.title)}
+                        >
+                          {subsection.title}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           </div>

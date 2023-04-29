@@ -74,11 +74,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
   opacity: 0;
   transition: all 0.3s;
-  border-top-width: 1px;
-  border-bottom-width: 1px;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
   border-top-style: solid;
   border-bottom-style: solid;
   border-top-color: var(--accent);
@@ -106,6 +105,43 @@
 .sectionButton:hover::after {
   opacity: 0; 
   transform: scale(0.1, 1);
+}
+
+.subButton {
+  display: block;
+  margin-left: 20px;
+  width: 100%;
+  height: 32px;
+  line-height: 32px;
+  font-size: 20px;
+  text-align: left;
+  color: var(--content);
+  background-color: var(--primary);
+  border: none;
+  letter-spacing: 2px;
+  position: relative;
+  transition: all .35s;
+  font-family: 'LiveOverfont';
+}
+
+.subButton:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--accent);
+  opacity: 0.5;
+  transition: all .35s;
+}
+
+.subButton:hover{
+  color: invert(var(--primary));
+}
+
+.subButton:hover:after{
+  width: 100%;
 }
 
 .scrollableMenu {

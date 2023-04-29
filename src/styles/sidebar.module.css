@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'LiveOverfont';
-  src: url('/public/fonts/LiveOverfont.otf') format('otf');
+  src: url('/fonts/LiveOverfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }

@@ -8,8 +8,7 @@
       "children": [
         {
           "title": "What is this?",
-          "abbr": "WHAT",
-          "children": [{ "title": "Atomical 2023", "abbr": "101", "loc": 23 }]
+          "abbr": "WHAT"
         }
       ]
     },
@@ -19,11 +18,7 @@
       "children": [
         {
           "title": "FoolGPT & Why Quantum Sucks",
-          "abbr": "PCS",
-          "children": [
-            { "title": "Introduction", "abbr": "101", "loc": 1 },
-            { "title": "Fool the Bot", "abbr": "GPT", "loc": 4 }
-          ]
+          "abbr": "PCS"
         }
       ]
     }

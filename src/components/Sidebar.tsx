@@ -6,7 +6,7 @@ export default function Sidebar(props: { onChildClick: any; }) {
   const [activeLoc, setActiveLoc] = useState(["S1", "PCS", "101"]);
   const { onChildClick } = props;
 
-  const handleClick = (newLoc: [string, string, string]) => {
+  const handleClick = (newLoc: [string, string]) => {
     onChildClick(activeLoc);
     setActiveLoc(newLoc)
   };
@@ -25,25 +25,10 @@ export default function Sidebar(props: { onChildClick: any; }) {
                     className={`${styles.subsecButton} ${
                       activeLoc[1] === subsection.abbr && styles.activeButton
                     }`}
-                    onClick={() => handleClick([section.abbr, subsection.abbr, subsection.children[0].abbr])}
+                    onClick={() => handleClick([section.abbr, subsection.abbr])}
                   >
                     {subsection.title}
                   </button>
-                  {activeLoc[1] === subsection.abbr && (
-                    <div className={styles.buttonSection}>
-                      {subsection.children.map((link, _) => (
-                        <button
-                          className={`${styles.linkButton} ${
-                            activeLoc[2] === link.abbr &&
-                            styles.activeButton
-                          }`}
-                          onClick={() => handleClick([section.abbr, subsection.abbr, link.abbr])}
-                        >
-                          {link.title}
-                        </button>
-                      ))}
-                    </div>
-                  )}
                 </div>
               ))}
             </div>

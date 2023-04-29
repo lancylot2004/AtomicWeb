@@ -50,9 +50,10 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  transition: all 0.2s ease-in-out;
 }
 
-.sectionButton {
+.subsecButton {
   line-height: 35px;
   height: 35px;
   font-size: 25px;
@@ -67,7 +68,7 @@
   font-family: 'LiveOverfont';
 }
 
-.sectionButton::before {
+.subsecButton::before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -85,12 +86,12 @@
   transform: scale(0, 1);
 }
 
-.sectionButton:hover::before {
+.subsecButton:hover::before {
   opacity: 1; 
   transform: scale(1, 1); 
 }
 
-.sectionButton::after {
+.subsecButton::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -102,12 +103,12 @@
   background-color: rgba(255,255,255,0.1);
 }
 
-.sectionButton:hover::after {
+.subsecButton:hover::after {
   opacity: 0; 
   transform: scale(0.1, 1);
 }
 
-.subButton {
+.linkButton {
   display: block;
   margin-left: 20px;
   width: 100%;
@@ -124,7 +125,7 @@
   font-family: 'LiveOverfont';
 }
 
-.subButton:after{
+.linkButton:after{
   position: absolute;
   content: "";
   top: 0;
@@ -136,12 +137,16 @@
   transition: all .35s;
 }
 
-.subButton:hover{
+.linkButton:hover{
   color: invert(var(--primary));
 }
 
-.subButton:hover:after{
+.linkButton:hover:after{
   width: 100%;
+}
+
+.activeButton {
+  background-color: var(--accent);
 }
 
 .scrollableMenu {

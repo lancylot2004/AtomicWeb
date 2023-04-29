@@ -1,5 +1,6 @@
 {
   "appName": "Atomical 2023",
+  "appDesc": "Atomic's 2023 Challenge",
   "sections": [
     {
       "title": "Information",
@@ -18,10 +19,10 @@
       "children": [
         {
           "title": "FoolGPT & Why Quantum Sucks",
-          "abbr": "PCs",
+          "abbr": "PCS",
           "children": [
             { "title": "Introduction", "abbr": "101", "loc": 1 },
-            { "title": "Defeat the Chatbot", "abbr": "GPT", "loc": 26 }
+            { "title": "Fool the Bot", "abbr": "GPT", "loc": 4 }
           ]
         }
       ]

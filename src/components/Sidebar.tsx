@@ -1,17 +1,14 @@
-import { useState } from 'react';
-import styles from '@/styles/sidebar.module.css';
-import config from '@/config.json'
+import { useState } from "react";
+import styles from "@/styles/sidebar.module.css";
+import config from "@/config.json";
 
-export default function Sidebar() {
-  const [activeSection, setActiveSection] = useState(0);
+export default function Sidebar(props: { onChildClick: any; }) {
+  const [activeLoc, setActiveLoc] = useState(["S1", "PCS", "101"]);
+  const { onChildClick } = props;
 
-  const handleButtonClick = (type: number, title: string) => {
-    // Type: 0 --> Subsection, 1 --> Link
-    if (type == 0) {
-      // Do something when a subsection is clicked
-    } else if (type == 1) {
-      // Do something when a link is clicked
-    }
+  const handleClick = (newLoc: [string, string, string]) => {
+    onChildClick(activeLoc);
+    setActiveLoc(newLoc)
   };
 
   return (
@@ -22,25 +19,27 @@ export default function Sidebar() {
           <div key={index}>
             <div className={styles.sectionHeader}>{section.title}</div>
             <div className={styles.buttonSection}>
-              {section.children.map((child, buttonIndex) => (
-                <div key={buttonIndex}>
+              {section.children.map((subsection, _) => (
+                <div key={subsection.title}>
                   <button
-                    className={`${styles.sectionButton} ${
-                      activeSection === buttonIndex && styles.activeButton
+                    className={`${styles.subsecButton} ${
+                      activeLoc[1] === subsection.abbr && styles.activeButton
                     }`}
-                    onClick={() => handleButtonClick(0, child.title)}
+                    onClick={() => handleClick([section.abbr, subsection.abbr, subsection.children[0].abbr])}
                   >
-                    {child.title}
+                    {subsection.title}
                   </button>
-                  {activeSection === buttonIndex && (
-                    <div className={styles.subButtons}>
-                      {child.children.map((subsection, subIndex) => (
+                  {activeLoc[1] === subsection.abbr && (
+                    <div className={styles.buttonSection}>
+                      {subsection.children.map((link, _) => (
                         <button
-                          key={subIndex}
-                          className={styles.subButton}
-                          onClick={() => handleButtonClick(1, subsection.title)}
+                          className={`${styles.linkButton} ${
+                            activeLoc[2] === link.abbr &&
+                            styles.activeButton
+                          }`}
+                          onClick={() => handleClick([section.abbr, subsection.abbr, link.abbr])}
                         >
-                          {subsection.title}
+                          {link.title}
                         </button>
                       ))}
                     </div>

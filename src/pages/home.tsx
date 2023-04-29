@@ -1,5 +1,9 @@
 import Head from "next/head";
 import styles from "../styles/home.module.css";
+
+import Editor from "../components/Editor";
+import Sidebar from "../components/Sidebar";
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -10,6 +14,9 @@ export default function Home() {
       </Head>
 
       <div className={styles.mainContent}>
+        <Editor />
+        <Sidebar />
+
         <div className={styles.markdown}>
           <p>placeholder</p>
         </div>

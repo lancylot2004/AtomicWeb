@@ -1,0 +1,257 @@
+.header, .footer {
+    display: block
+}
+
+.editor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: var(--leftColumnWidth);
+    overflow: hidden;
+    font-family: Menlo,"Roboto Mono","Droid Sans Mono","Lucida Sans Typewriter","Courier New",Courier,monospace
+}
+
+@media(orientation: portrait) {
+    .editor {
+        font-size:min(2.2vh,4.7vw)
+    }
+}
+
+@media(orientation: landscape) {
+    .editor {
+        font-size:min(1vw,16px)
+    }
+}
+
+.editor .header,.editor .footer {
+    display: flex;
+    position: absolute;
+    right: 0;
+    left: 0;
+    align-items: center;
+    padding: 0.25em;
+    background-color: #e60012;
+    color: #fff
+}
+
+.editor .header span,.editor .footer span {
+    margin-right: 1em
+}
+
+.editor .header span:last-child,.editor .footer span:last-child {
+    margin-right: .5em
+}
+
+@media(orientation: portrait) {
+    .editor .header,.editor .footer {
+        align-items:center;
+        justify-content: space-between;
+        height: 5.5vw;
+        font-size: min(2.2vh,4vw)
+    }
+}
+
+@media(orientation: landscape) {
+    .editor .header,.editor .footer {
+        justify-content:start;
+        height: 1.5vw
+    }
+}
+
+.editor .header {
+    top: 0
+}
+
+@media(orientation: portrait) {
+    .editor .header {
+        padding-right:12vw
+    }
+}
+
+.editor .header .filename {
+    display: flex;
+    align-items: center;
+    opacity: .5
+}
+
+.editor .header .filename::before {
+    display: block;
+    width: 1em;
+    height: 1em;
+    margin-right: .2em;
+    background-image: url(../assets/icon-ts.svg);
+    background-size: 1em 1em;
+    content: ""
+}
+
+.editor .header .search {
+    display: flex;
+    align-items: center
+}
+
+.editor .header .query {
+    display: block;
+    margin-right: .5em;
+    font-size: 90%;
+    opacity: .5
+}
+
+.editor .header .options {
+    display: flex;
+    align-items: center;
+    opacity: .5
+}
+
+.editor .header .options span {
+    display: block;
+    width: 1.25em;
+    padding: .1em;
+    border-radius: 10%;
+    background-color: #fff;
+    color: #e60012;
+    font-size: 75%;
+    text-align: center
+}
+
+.editor .footer {
+    bottom: 0;
+    align-items: center
+}
+
+.editor .footer .branch {
+    display: flex;
+    align-items: center;
+    opacity: .5
+}
+
+.editor .footer .branch::before {
+    display: block;
+    width: 1em;
+    height: 1em;
+    margin-right: .2em;
+    background-image: url(../assets/icon-branch.svg);
+    background-size: 1em 1em;
+    content: ""
+}
+
+.editor .footer .charset {
+    opacity: .5
+}
+
+.editor .footer .mode {
+    opacity: .5
+}
+
+.editor pre {
+    position: absolute;
+    right: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #eee;
+    color: #ccc;
+    scroll-behavior: initial
+}
+
+.editor pre ::selection {
+    background-color: #e60012;
+    color: #fff
+}
+
+@media(orientation: portrait) {
+    .editor pre {
+        top:5vw;
+        bottom: 5vw
+    }
+}
+
+@media(orientation: landscape) {
+    .editor pre {
+        top:1.5vw;
+        bottom: 1.5vw;
+        padding-bottom: 4em
+    }
+}
+
+.editor pre ol {
+    position: relative;
+    padding: .5em
+}
+
+@media(hover: hover) {
+    .editor pre li:hover {
+        background-color:#e6e6e6
+    }
+}
+
+.editor pre li[data-stat=empty] {
+    display: none
+}
+
+.editor pre li[data-stat=typing] {
+    background-color: #e0e0e0
+}
+
+.editor pre li[data-stat=typing]::after {
+    background-color: #e60012;
+    content: " ";
+    animation: 1s linear infinite kf-blink
+}
+
+.editor pre a {
+    display: block;
+    padding-bottom: 1em
+}
+
+.editor pre a .highlight {
+    padding: 0 .2em;
+    background-color: #e60012;
+    color: #fff
+}
+
+.editor pre a * {
+    pointer-events: none
+}
+
+@media(hover: hover) {
+    .editor pre a:hover {
+        background-color:#fff !important
+    }
+
+    .editor pre a:hover .comment {
+        color: #666
+    }
+
+    .editor pre a:hover .highlight {
+        background-color: #000;
+        color: #fff
+    }
+}
+
+.editor pre .comment {
+    color: #ecc6c7
+}
+
+.editor pre .separator {
+    color: #ecc6c7
+}
+
+.editor pre .keyword {
+    color: #ecc6c7
+}
+
+.editor pre .indent {
+    position: relative
+}
+
+.editor pre .indent::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    background-color: #e60012;
+    content: "";
+    opacity: .05
+}

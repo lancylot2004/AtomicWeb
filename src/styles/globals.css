@@ -1,6 +1,7 @@
 :root {
   box-sizing: border-box;
-  --leftColumnWidth: max(300px, 15%);
+  --leftMenuWidth: max(300px, 15%);
+  --leftMenuHeight: ;
 
   --content: #482C3D;
   --background: #EFF9F0;

@@ -1,7 +1,11 @@
-<<<<<<< HEAD
 :root {
   box-sizing: border-box;
   --leftColumnWidth: max(300px, 15%);
+
+  --content: #482C3D;
+  --background: #EFF9F0;
+  --primary: #A3C1AD;
+  --accent: #EF8354;
 }
 
 html, body, #__next {

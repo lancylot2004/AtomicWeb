@@ -31,8 +31,8 @@
     left: 0;
     align-items: center;
     padding: 0.25em;
-    background-color: #e60012;
-    color: #fff
+    background-color: var(--accent);
+    color: invert(var(--content));
 }
 
 .editor .header span,.editor .footer span {
@@ -108,8 +108,8 @@
     width: 1.25em;
     padding: .1em;
     border-radius: 10%;
-    background-color: #fff;
-    color: #e60012;
+    background-color: var(--content);
+    color: var(--accent);
     font-size: 75%;
     text-align: center
 }
@@ -141,117 +141,4 @@
 
 .editor .footer .mode {
     opacity: .5
-}
-
-.editor pre {
-    position: absolute;
-    right: 0;
-    left: 0;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    background-color: #eee;
-    color: #ccc;
-    scroll-behavior: initial
-}
-
-.editor pre ::selection {
-    background-color: #e60012;
-    color: #fff
-}
-
-@media(orientation: portrait) {
-    .editor pre {
-        top:5vw;
-        bottom: 5vw
-    }
-}
-
-@media(orientation: landscape) {
-    .editor pre {
-        top:1.5vw;
-        bottom: 1.5vw;
-        padding-bottom: 4em
-    }
-}
-
-.editor pre ol {
-    position: relative;
-    padding: .5em
-}
-
-@media(hover: hover) {
-    .editor pre li:hover {
-        background-color:#e6e6e6
-    }
-}
-
-.editor pre li[data-stat=empty] {
-    display: none
-}
-
-.editor pre li[data-stat=typing] {
-    background-color: #e0e0e0
-}
-
-.editor pre li[data-stat=typing]::after {
-    background-color: #e60012;
-    content: " ";
-    animation: 1s linear infinite kf-blink
-}
-
-.editor pre a {
-    display: block;
-    padding-bottom: 1em
-}
-
-.editor pre a .highlight {
-    padding: 0 .2em;
-    background-color: #e60012;
-    color: #fff
-}
-
-.editor pre a * {
-    pointer-events: none
-}
-
-@media(hover: hover) {
-    .editor pre a:hover {
-        background-color:#fff !important
-    }
-
-    .editor pre a:hover .comment {
-        color: #666
-    }
-
-    .editor pre a:hover .highlight {
-        background-color: #000;
-        color: #fff
-    }
-}
-
-.editor pre .comment {
-    color: #ecc6c7
-}
-
-.editor pre .separator {
-    color: #ecc6c7
-}
-
-.editor pre .keyword {
-    color: #ecc6c7
-}
-
-.editor pre .indent {
-    position: relative
-}
-
-.editor pre .indent::before {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 2px;
-    background-color: #e60012;
-    content: "";
-    opacity: .05
 }

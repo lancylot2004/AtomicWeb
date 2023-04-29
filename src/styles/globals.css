@@ -1,7 +1,25 @@
-body{
-    margin: 0;
-    padding: 0;
+<<<<<<< HEAD
+:root {
+  box-sizing: border-box;
+  --leftColumnWidth: max(300px, 15%);
 }
-html::-webkit-scrollbar{
-    display: none;
+
+html, body, #__next {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,pre {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: rgba(0,0,0,0) none no-repeat scroll 0 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  scroll-behavior: smooth
 }

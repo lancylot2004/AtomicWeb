@@ -1,3 +1,30 @@
 {
-    "appName": "Atomical 2023"
+  "appName": "Atomical 2023",
+  "sections": [
+    {
+      "title": "Information",
+      "abbr": "INFO",
+      "children": [
+        {
+          "title": "What is this?",
+          "abbr": "WHAT",
+          "children": [{ "title": "Atomical 2023", "abbr": "101", "loc": 23 }]
+        }
+      ]
+    },
+    {
+      "title": "Section 1",
+      "abbr": "S1",
+      "children": [
+        {
+          "title": "FoolGPT & Why Quantum Sucks",
+          "abbr": "PCs",
+          "children": [
+            { "title": "Introduction", "abbr": "101", "loc": 1 },
+            { "title": "Defeat the Chatbot", "abbr": "GPT", "loc": 26 }
+          ]
+        }
+      ]
+    }
+  ]
 }

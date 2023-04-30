@@ -1,12 +1,23 @@
 :root {
   box-sizing: border-box;
   --leftMenuWidth: max(300px, 15%);
-  --leftMenuHeight: ;
 
   --content: #482C3D;
   --background: #EFF9F0;
   --primary: #A3C1AD;
   --accent: #EF8354;
+}
+
+@media (orientation: portrait) {
+  :root {
+    --editorHeight: 3vw;
+  }
+}
+
+@media (orientation: landscape) {
+  :root {
+    --editorHeight: 1vw;
+  }
 }
 
 html, body, #__next {

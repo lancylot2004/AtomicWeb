@@ -6,7 +6,7 @@
 }
 
 .leftMenu {
-  height: 100%;
+  height: calc(100% - 2 * var(--editorHeight));
   width: var(--leftMenuWidth);
   background-color: var(--background);
   display: flex;

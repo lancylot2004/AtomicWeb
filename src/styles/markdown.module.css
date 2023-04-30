@@ -1,0 +1,6 @@
+.markdown {
+    background-color: var(--background);
+    height: 100%;
+    margin: 0;
+    padding: 30px;
+}

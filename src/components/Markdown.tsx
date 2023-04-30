@@ -14,8 +14,8 @@ export default function Markdown({ fileName }: { fileName: string }) {
   }, [fileName]);
 
   return (
-    <div>
-      <ReactMarkdown remarkPlugins={[remarkGfm]} children={markdown} />
+    <div className={style.markdown}>
+      <ReactMarkdown remarkPlugins={[remarkGfm]} children={markdown}/>
     </div>
   );
 }

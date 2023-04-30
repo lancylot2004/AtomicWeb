@@ -2,10 +2,11 @@ import Head from "next/head";
 import styles from "@/styles/home.module.css";
 import config from "@/config.json";
 
-import Editor from "@/components/Editor";
 import Sidebar from "@/components/Sidebar";
 import Markdown from "@/components/Markdown";
 import { useEffect, useState } from "react";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 export default function Home() {
   const [activeLoc, setActiveLoc] = useState(["S1", "PCS"]);
@@ -25,9 +26,10 @@ export default function Home() {
 
       <div className={styles.mainContent}>
         <Sidebar onChildClick={(newLoc: [string, string]) => setActiveLoc(newLoc)} />
-        <div className={styles.markdown}>
+        <Footer />
+        <div className={styles.rightHalf}>
+          <Header fileName={fileName} />
           <Markdown fileName={fileName}/>
-          <Editor fileName={fileName}/>
         </div>
       </div>
     </div>

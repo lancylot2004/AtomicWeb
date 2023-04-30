@@ -10,9 +10,8 @@
   flex: 1;
 }
 
-.markdown {
+.rightHalf {
   flex: 1;
-  padding: 40px;
   background-color: #f9f9f9;
   font-size: 18px;
   line-height: 1.5;

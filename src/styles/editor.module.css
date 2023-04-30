@@ -1,82 +1,64 @@
 .header, .footer {
-    display: block
+    position: absolute;
+    display: flex;
+    right: 0;
+    align-items: center;
+    height: var(--editorHeight);
+    padding: 0.25em;
+    background-color: var(--accent);
+    color: invert(var(--content));
+    pointer-events: none; 
+    overflow: hidden;
+    font-family: Menlo,"Roboto Mono","Droid Sans Mono","Lucida Sans Typewriter","Courier New",Courier,monospace;
+    overflow: hidden;
 }
 
-.editor {
-    position: absolute;
-    pointer-events: none; 
+.header {
     top: 0;
-    right: 0;
-    bottom: 0;
     left: var(--leftMenuWidth);
-    overflow: hidden;
-    font-family: Menlo,"Roboto Mono","Droid Sans Mono","Lucida Sans Typewriter","Courier New",Courier,monospace
+}
+
+.footer {
+    left: 0;
+    bottom: 0;
 }
 
 @media(orientation: portrait) {
-    .editor {
-        font-size:min(2.2vh,4.7vw)
+    .header, .footer {
+        font-size:min(1vh,3vw);
+        justify-content: space-between;
     }
 }
 
 @media(orientation: landscape) {
-    .editor {
-        font-size:min(1vw,16px)
+    .header, .footer {
+        font-size:min(1vw,16px);
+        justify-content:start;
     }
 }
 
-.editor .header,.editor .footer {
-    display: flex;
-    position: absolute;
-    right: 0;
-    left: 0;
-    align-items: center;
-    padding: 0.25em;
-    background-color: var(--accent);
-    color: invert(var(--content));
+.header span, .footer span {
+    margin-right: 1em;
+    overflow: hidden;
 }
 
-.editor .header span,.editor .footer span {
-    margin-right: 1em
-}
-
-.editor .header span:last-child,.editor .footer span:last-child {
+.header span:last-child, .footer span:last-child {
     margin-right: .5em
 }
 
 @media(orientation: portrait) {
-    .editor .header,.editor .footer {
-        align-items:center;
-        justify-content: space-between;
-        height: 5.5vw;
-        font-size: min(2.2vh,4vw)
-    }
-}
-
-@media(orientation: landscape) {
-    .editor .header,.editor .footer {
-        justify-content:start;
-        height: 1.5vw
-    }
-}
-
-.editor .header {
-    top: 0
-}
-
-@media(orientation: portrait) {
-    .editor .header {
+    .header {
         padding-right:12vw
     }
 }
 
-.editor .header .filename {
+.header .filename {
     display: flex;
     align-items: center;
     opacity: .5
 }
 
-.editor .header .filename::before {
+.header .filename::before {
     display: block;
     width: 1em;
     height: 1em;
@@ -85,25 +67,25 @@
     background-size: 1em 1em;
 }
 
-.editor .header .search {
+.header .search {
     display: flex;
     align-items: center
 }
 
-.editor .header .query {
+.header .query {
     display: block;
     margin-right: .5em;
     font-size: 90%;
     opacity: .5
 }
 
-.editor .header .options {
+.header .options {
     display: flex;
     align-items: center;
     opacity: .5
 }
 
-.editor .header .options span {
+.header .options span {
     display: block;
     width: 1.25em;
     padding: .1em;
@@ -114,18 +96,18 @@
     text-align: center
 }
 
-.editor .footer {
+.footer {
     bottom: 0;
     align-items: center
 }
 
-.editor .footer .branch {
+.footer .branch {
     display: flex;
     align-items: center;
     opacity: .5
 }
 
-.editor .footer .branch::before {
+.footer .branch::before {
     display: block;
     width: 1em;
     height: 1em;
@@ -135,10 +117,10 @@
     content: ""
 }
 
-.editor .footer .charset {
+.footer .charset {
     opacity: .5
 }
 
-.editor .footer .mode {
+.footer .mode {
     opacity: .5
 }

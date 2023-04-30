@@ -1,6 +1,7 @@
 {
   "appName": "Atomical 2023",
   "appDesc": "Atomic's 2023 Challenge",
+  "defaultFileName": "S1-PCS.md",
   "sections": [
     {
       "title": "Information",

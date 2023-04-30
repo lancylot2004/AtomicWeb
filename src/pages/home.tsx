@@ -9,11 +9,11 @@ import { useState } from "react";
 
 export default function Home() {
   const [activeLoc, setActiveLoc] = useState(["S1", "PCS"]);
-  const [filePath, setFilePath] = useState("/markdown/S1-PCS.md");
+  const [fileName, setFileName] = useState(config.defaultFileName);
 
   const handleChildClick = (newLoc: [string, string]) => {
     setActiveLoc(newLoc);
-    setFilePath(`/markdown/${newLoc[0]}-${newLoc[1]}.md`);
+    setFileName(`${newLoc[0]}-${newLoc[1]}.md`);
   };
 
   return (
@@ -25,11 +25,11 @@ export default function Home() {
       </Head>
 
       <div className={styles.mainContent}>
-        <Editor />
+        <Editor fileName={fileName}/>
         <Sidebar onChildClick={handleChildClick} />
 
         <div className={styles.markdown}>
-          <Markdown filePath={filePath}/>
+          <Markdown fileName={fileName}/>
         </div>
       </div>
     </div>

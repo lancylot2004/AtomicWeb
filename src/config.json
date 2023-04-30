@@ -1,7 +1,10 @@
 {
   "appName": "Atomical 2023",
   "appDesc": "Atomic's 2023 Challenge",
-  "defaultFileName": "S1-PCS.md",
+  "wb": {
+    "defaultFileName": "S1-PCS.md",
+    "baseURL": "https://raw.githubusercontent.com/lancylot2004/AtomicalQuestions/main/2023/"
+  },
   "et": {
     "branch": "main",
     "charset": "UTF-8",

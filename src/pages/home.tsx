@@ -10,7 +10,7 @@ import Header from "@/components/Header";
 
 export default function Home() {
   const [activeLoc, setActiveLoc] = useState(["S1", "PCS"]);
-  const [fileName, setFileName] = useState(config.defaultFileName);
+  const [fileName, setFileName] = useState(config.wb.defaultFileName);
 
   useEffect(() => {
     setFileName(`${activeLoc[0]}-${activeLoc[1]}.md`);

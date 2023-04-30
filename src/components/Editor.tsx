@@ -1,53 +1,34 @@
 import { useEffect, useState } from "react";
+
 import config from "@/config.json";
 import styles from "@/styles/editor.module.css";
+import TypingEffect from "@/helpers/TypingEffect";
+import RandomiseEffect from "@/helpers/RandomiseEffect";
 
 interface Props {
   fileName: string;
 }
 
 export default function Editor({ fileName }: Props) {
-  const [regex, setRegex] = useState(config.regexes[0]);
-  const [typedRegex, setTypedRegex] = useState("");
-  const [showTyping, setShowTyping] = useState(false);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      let newRegex = regex;
-      while (newRegex === regex) {
-        const index = Math.floor(Math.random() * config.regexes.length);
-        newRegex = config.regexes[index];
-      }
-      setShowTyping(true);
-      setTypedRegex("");
-      for (let i = 0; i < newRegex.length; i++) {
-        setTimeout(() => setTypedRegex((prev) => prev + newRegex[i]), i * 50);
-      }
-      setTimeout(() => {
-        setRegex(newRegex);
-        setShowTyping(false);
-      }, newRegex.length * 50);
-    }, Math.floor(Math.random() * 20000) + 5000);
-    return () => clearInterval(intervalId);
-  }, []);
+  const regex = RandomiseEffect(config.et.regexes[0], config.et.minT, config.et.maxT, config.et.regexes);
+  const typedRegex = TypingEffect(regex, 50);
+  const typedFileName = TypingEffect(fileName, 50);
 
   return (
     <div className={styles.editor}>
       <div className={styles.header}>
-        <span className={styles.filename}>{fileName}</span>
+        <span className={styles.filename}>{typedFileName}</span>
         <span className={styles.search}>
-          <span className={styles.query}>
-            {showTyping ? typedRegex : regex}
-          </span>
+          <span className={styles.query}>{typedRegex}</span>
           <span className={styles.options}>
-            <span>g</span>
+            <span>{config.et.options}</span>
           </span>
         </span>
       </div>
       <div className={styles.footer}>
-        <span className={styles.branch}>{config.branch}</span>
-        <span className={styles.charset}>{config.charset}</span>
-        <span className={styles.mode}>{config.mode}</span>
+        <span className={styles.branch}>{config.et.branch}</span>
+        <span className={styles.charset}>{config.et.charset}</span>
+        <span className={styles.mode}>{config.et.mode}</span>
       </div>
     </div>
   );

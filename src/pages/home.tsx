@@ -5,16 +5,15 @@ import config from "@/config.json";
 import Editor from "@/components/Editor";
 import Sidebar from "@/components/Sidebar";
 import Markdown from "@/components/Markdown";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [activeLoc, setActiveLoc] = useState(["S1", "PCS"]);
   const [fileName, setFileName] = useState(config.defaultFileName);
 
-  const handleChildClick = (newLoc: [string, string]) => {
-    setActiveLoc(newLoc);
-    setFileName(`${newLoc[0]}-${newLoc[1]}.md`);
-  };
+  useEffect(() => {
+    setFileName(`${activeLoc[0]}-${activeLoc[1]}.md`);
+  }, [activeLoc]);
 
   return (
     <div className={styles.container}>
@@ -26,7 +25,7 @@ export default function Home() {
 
       <div className={styles.mainContent}>
         <Editor fileName={fileName}/>
-        <Sidebar onChildClick={handleChildClick} />
+        <Sidebar onChildClick={(newLoc: [string, string]) => setActiveLoc(newLoc)} />
 
         <div className={styles.markdown}>
           <Markdown fileName={fileName}/>

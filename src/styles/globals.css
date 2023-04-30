@@ -28,3 +28,18 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,pre {
   vertical-align: baseline;
   scroll-behavior: smooth
 }
+
+.typeAnimation {
+  animation: typewriter 4s steps(44) 1s 1 normal both
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 24em; }
+}
+
+/* Current Unused */
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}

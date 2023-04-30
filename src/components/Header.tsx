@@ -1,10 +1,11 @@
-import config from "@/config.json";
+import { getConfig } from '@/helpers/config';
 import styles from "@/styles/editor.module.css";
 
 import TypingEffect from "@/helpers/TypingEffect";
 import RandomiseEffect from "@/helpers/RandomiseEffect";
 
 export default function Footer({ fileName }: { fileName: string }) {
+  const config = getConfig();
   const regex = RandomiseEffect(
     config.et.regexes[0],
     config.et.minT,

@@ -1,6 +1,27 @@
 import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import App, { AppContext, AppProps } from 'next/app';
+import { fetchConfig, getConfig } from '@/helpers/config';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+class MyApp extends App<AppProps> {
+  static async getInitialProps({ Component, ctx }: AppContext) {
+    let pageProps = {};
+
+    // Call the fetchConfig function to fetch the config data
+    await fetchConfig();
+
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx);
+    }
+
+    return { pageProps };
+  }
+
+  render() {
+    const { Component, pageProps } = this.props;
+
+    // Pass the config data as a prop to all pages and components
+    return <Component {...pageProps} config={getConfig()} />;
+  }
 }
+
+export default MyApp;

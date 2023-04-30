@@ -1,8 +1,9 @@
 import { useState, useCallback } from "react";
 import styles from "@/styles/sidebar.module.css";
-import config from "@/config.json";
+import { getConfig } from '@/helpers/config';
 
 export default function Sidebar(props: { onChildClick: (newData: [string, string]) => void; }) {
+  const config = getConfig();
   const [activeLoc, setActiveLoc] = useState<[string, string]>(["S1", "PCS"]);
   const { onChildClick } = props;
 

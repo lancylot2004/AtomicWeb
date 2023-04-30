@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "@/styles/home.module.css";
-import config from "@/config.json";
+import { getConfig } from '@/helpers/config';
 
 import Sidebar from "@/components/Sidebar";
 import Markdown from "@/components/Markdown";
@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
 export default function Home() {
+  const config = getConfig();
   const [activeLoc, setActiveLoc] = useState(config.wb.defaultLoc);
   const [fileName, setFileName] = useState(config.wb.defaultFileName);
 

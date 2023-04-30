@@ -1,10 +1,11 @@
 import React, { useState, useEffect, Fragment } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import config from "@/config.json";
+import { getConfig } from '@/helpers/config';
 import style from "@/styles/markdown.module.css";
 
 export default function Markdown({ fileName }: { fileName: string }) {
+  const config = getConfig();
   const [markdown, setMarkdown] = useState<string>("");
 
   useEffect(() => {

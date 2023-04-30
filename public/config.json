@@ -10,7 +10,7 @@
     "branch": "main",
     "charset": "UTF-8",
     "mode": "Markdown",
-    "options": "g",
+    "options": "gm",
     "minT": 5000,
     "maxT": 20000,
     "regexes": [

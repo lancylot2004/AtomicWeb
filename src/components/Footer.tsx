@@ -1,7 +1,8 @@
-import config from "@/config.json";
+import { getConfig } from '@/helpers/config';
 import styles from "@/styles/editor.module.css";
 
 export default function Footer() {
+  const config = getConfig();
   return (
     <div className={styles.footer}>
       <span className={styles.branch}>{config.et.branch}</span>

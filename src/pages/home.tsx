@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
 export default function Home() {
-  const [activeLoc, setActiveLoc] = useState(["S1", "PCS"]);
+  const [activeLoc, setActiveLoc] = useState(config.wb.defaultLoc);
   const [fileName, setFileName] = useState(config.wb.defaultFileName);
 
   useEffect(() => {

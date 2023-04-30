@@ -3,6 +3,7 @@
   "appDesc": "Atomic's 2023 Challenge",
   "wb": {
     "defaultFileName": "S1-PCS.md",
+    "defaultLoc": ["S1", "PCS"],
     "baseURL": "https://raw.githubusercontent.com/lancylot2004/AtomicalQuestions/main/2023/"
   },
   "et": {

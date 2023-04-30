@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from "react";
 import ReactMarkdown from "react-markdown";
-import ReactMarkdownProps from 'react-markdown'
+import remarkGfm from "remark-gfm";
 import style from "@/styles/markdown.module.css";
 
 export default function Markdown({ fileName }: { fileName: string }) {
@@ -13,17 +13,9 @@ export default function Markdown({ fileName }: { fileName: string }) {
       .catch((error: Error) => console.error(error));
   }, [fileName]);
 
-  const renderers = {
-    image: ({ src, alt }: { src: string; alt: string }) => (
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <img src={src} alt={alt} className={style.image} />
-      </div>
-    ),
-  };
-
   return (
     <div>
-      <ReactMarkdown renderers={renderers} children={markdown} />
+      <ReactMarkdown remarkPlugins={[remarkGfm]} children={markdown} />
     </div>
   );
 }

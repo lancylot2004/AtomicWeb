@@ -8,13 +8,12 @@ import Markdown from "@/components/Markdown";
 import { useState } from "react";
 
 export default function Home() {
-  const [activeLoc, setActiveSection] = useState(["S1", "PCS"]);
+  const [activeLoc, setActiveLoc] = useState(["S1", "PCS"]);
   const [filePath, setFilePath] = useState("/markdown/S1-PCS.md");
 
-  const handleChildClick = (newData: [string, string]) => {
-    setActiveSection(newData);
-    setFilePath(`/markdown/${activeLoc[0]}-${activeLoc[1]}.md`);
-    console.log(filePath)
+  const handleChildClick = (newLoc: [string, string]) => {
+    setActiveLoc(newLoc);
+    setFilePath(`/markdown/${newLoc[0]}-${newLoc[1]}.md`);
   };
 
   return (

@@ -24,11 +24,10 @@ export default function Home() {
       </Head>
 
       <div className={styles.mainContent}>
-        <Editor fileName={fileName}/>
         <Sidebar onChildClick={(newLoc: [string, string]) => setActiveLoc(newLoc)} />
-
         <div className={styles.markdown}>
           <Markdown fileName={fileName}/>
+          <Editor fileName={fileName}/>
         </div>
       </div>
     </div>

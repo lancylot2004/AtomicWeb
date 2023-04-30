@@ -1,12 +1,10 @@
+import React, { useState, useEffect, Fragment } from "react";
 import ReactMarkdown from "react-markdown";
-import { useEffect, useState } from "react";
+import ReactMarkdownProps from 'react-markdown'
+import style from "@/styles/markdown.module.css";
 
-interface Props {
-  fileName: string
-}
-
-export default function Markdown({ fileName }: Props) {
-  const [markdown, setMarkdown] = useState("");
+export default function Markdown({ fileName }: { fileName: string }) {
+  const [markdown, setMarkdown] = useState<string>("");
 
   useEffect(() => {
     fetch(`/markdown/${fileName}`)
@@ -15,11 +13,17 @@ export default function Markdown({ fileName }: Props) {
       .catch((error: Error) => console.error(error));
   }, [fileName]);
 
+  const renderers = {
+    image: ({ src, alt }: { src: string; alt: string }) => (
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <img src={src} alt={alt} className={style.image} />
+      </div>
+    ),
+  };
+
   return (
     <div>
-      <ReactMarkdown
-        children={markdown}
-      />
+      <ReactMarkdown renderers={renderers} children={markdown} />
     </div>
   );
 }

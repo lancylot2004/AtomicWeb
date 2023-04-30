@@ -5,6 +5,17 @@
   font-style: normal;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.leftMenu::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.leftMenu {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 .leftMenu {
   height: calc(100% - 2 * var(--editorHeight));
   width: var(--leftMenuWidth);
@@ -14,7 +25,7 @@
   align-items: center;
   overflow-y: scroll;
   box-sizing: border-box;
-  font-family: 'LiveOverfont';
+  font-family: 'LiveOverfont';  
 }
 
 .logo {

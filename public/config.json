@@ -42,6 +42,10 @@
       "children": [
         {
           "title": "What is this?",
+          "abbr": "README"
+        },
+        {
+          "title": "Greetings",
           "abbr": "WHAT"
         }
       ]

@@ -7,7 +7,7 @@ import { fetchFile } from "@/helpers/fetchFile";
 
 export default function Markdown({ fileName }: { fileName: string }) {
   const config = getConfig();
-  const [markdown, setMarkdown] = useState<string>("");
+  const [markdown, setMarkdown] = useState<string>(`{config.wb.defaultLoc[0]}-{config.wb.defaultLoc[1]}.md`);
 
   useEffect(() => {
     fetchFile({ fileName, config })

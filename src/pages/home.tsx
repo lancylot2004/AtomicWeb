@@ -14,7 +14,7 @@ export default function Home() {
   const [fileName, setFileName] = useState(config.wb.defaultFileName);
 
   useEffect(() => {
-    setFileName(`${activeLoc[0]}-${activeLoc[1]}.md`);
+    setFileName(`${activeLoc[0]}-${activeLoc[1]}.md?v=1`);
   }, [activeLoc]);
 
   return (
